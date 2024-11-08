@@ -48,9 +48,9 @@ const config: HardhatUserConfig = {
         outputFile: "gas-report.txt",
         noColors: true,
         L2: "arbitrum",
-        // currency: "USD",
-        // coinmarketcap: COINMARKET_API,
-        // L2Etherscan: ARBISCAN_API_KEY,
+        currency: "USD",
+        coinmarketcap: COINMARKET_API,
+        L2Etherscan: ARBISCAN_API_KEY,
         // 要申请api https://coinmarketcap.com/ 并且有外网
     },
 }

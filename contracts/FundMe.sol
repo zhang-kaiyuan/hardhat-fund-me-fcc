@@ -35,7 +35,7 @@ contract FundMe {
 
         emit PriceFeedResultLog(priceFeedResult);
 
-		if (priceFeedResult >= MINIMUM_USD) {
+		if (priceFeedResult <= MINIMUM_USD) {
 			revert FundMe__NeedSpendMoreETH();
 		}
 

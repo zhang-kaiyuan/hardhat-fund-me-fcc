@@ -17,7 +17,7 @@ import { developmentChains } from "../../helper-hardhat-config"
           let fundMe: FundMe
           let deployer: SignerWithAddress
           let mockV3Aggregator: MockV3Aggregator
-          const SEND_VALUE: bigint = ethers.parseEther("0.000000001") //  = 1ETH
+          const SEND_VALUE: bigint = ethers.parseEther("0.001") //  = 1ETH
 
           // beforeEach() 每个it之前都会执行
           beforeEach(async () => {
@@ -44,8 +44,9 @@ import { developmentChains } from "../../helper-hardhat-config"
           describe("fund", async () => {
               it("fail if don`t send enough ETH", async () => {
                   // expect 底层是waffle 但是用chai导入
-                  await expect(fundMe.fund()).to.be.rejectedWith(
-                      "You need to spend more ETH!"
+				  await expect(fundMe.fund()).to.be.revertedWithCustomError(
+                      fundMe,
+                      "FundMe__NeedSpendMoreETH"
                   )
               })
               // 注意引号 yarn hardhat test --network hardhat --grep "amount funded"

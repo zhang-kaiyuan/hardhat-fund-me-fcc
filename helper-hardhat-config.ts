@@ -16,7 +16,7 @@ export const networkConfig: networkConfigInfo = {
     // Default one is ETH/USD contract on Sepolia
     arbitrumSepolia: {
         ethUsdPriceFeed: "0xd30e2101a97dcbAeBCBC04F14C3f624E67A35165",
-        blockConfirmations: 6,
+        blockConfirmations: 1,
     },
 }
 // --------------------- networkConfig ---------------------
